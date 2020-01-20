@@ -1,0 +1,45 @@
+@use 'colors';
+@import 'core.scss';
+
+@mixin base() {
+  font-family: 'Open Sans', sans-serif;
+  color: white;
+}
+
+@mixin shadow() {
+  text-shadow: 1px 1px 2px #0C0C0C;
+}
+
+.title1 {
+  @include base();
+  @include shadow();
+  font-size: 5em;
+  @include phone-only {
+    font-size: 2em;
+  }
+  @include tablet-portrait-up {
+    font-size: 3em;
+  }
+}
+
+.text-body {
+  @include base();
+  @include shadow();
+  font-size: 1.1em;
+  @include phone-only {
+    font-size: 0.8em;
+  }
+}
+
+.text-navbar {
+  @include base();
+  font-size: 1em;
+  cursor: pointer;
+  text-decoration: none;
+  color: colors.$white;
+
+  @include transition(color, 400ms);
+  &:hover {
+    color: colors.$lightgrey;
+  }
+}

@@ -1,0 +1,27 @@
+@mixin transform($property) {
+  transform: $property;
+  -webkit-transform: $property;
+  -ms-transform: $property;
+}
+
+@mixin transition($property, $time: 100ms) {
+  transition: $property $time;
+  -webkit-transition: $property $time;
+  -moz-transition: $property $time;
+}
+
+@mixin phone-only {
+  @media (max-width: 599px) { @content; }
+}
+@mixin tablet-portrait-up {
+  @media (min-width: 600px) and (max-width: 899px) { @content; }
+}
+@mixin tablet-landscape-up {
+  @media (min-width: 900px) { @content; }
+}
+@mixin desktop-up {
+  @media (min-width: 1200px) { @content; }
+}
+@mixin big-desktop-up {
+  @media (min-width: 1800px) { @content; }
+}
